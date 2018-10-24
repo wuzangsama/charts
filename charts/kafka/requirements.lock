@@ -1,0 +1,6 @@
+dependencies:
+- name: zookeeper
+  repository: http://127.0.0.1:8879/charts
+  version: 1.2.0
+digest: sha256:a98825afb709daa5a795a4a2e3427595e43f5b17673692c020c46863ed8f4d60
+generated: 2018-10-17T15:54:30.302337406+08:00
