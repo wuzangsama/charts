@@ -1,6 +1,0 @@
-dependencies:
-- name: zookeeper
-  version: 1.2.0
-  repository: https://wuzangsama.github.io/helm-charts
-  condition: zookeeper.enabled
-
