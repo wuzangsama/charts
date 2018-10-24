@@ -1,0 +1,39 @@
+# Default values for efk.
+
+# elasticsearch https://github.com/helm/charts/blob/master/incubator/elasticsearch/values.yaml
+elasticsearch:
+  image:
+    repository: docker.elastic.co/elasticsearch/elasticsearch-oss
+    tag: "6.4.2"
+
+# fluent-bit https://github.com/helm/charts/blob/master/stable/fluent-bit/values.yaml
+fluent-bit:
+  image:
+    fluent_bit:
+      repository: fluent/fluent-bit
+      tag: 0.14.4
+  backend:
+    type: es
+    es:
+      host: efk-elasticsearch-client.default.svc.cluster.local
+      port: 9200
+  rbac:
+    create: false
+
+# kibana https://github.com/helm/charts/blob/master/stable/kibana/values.yaml
+kibana:
+  image:
+    repository: "docker.elastic.co/kibana/kibana-oss"
+    tag: "6.4.2"
+  env:
+    # All Kibana configuration options are adjustable via env vars.
+    # To adjust a config option to an env var uppercase + replace `.` with `_`
+    # Ref: https://www.elastic.co/guide/en/kibana/current/settings.html
+    #
+    ELASTICSEARCH_URL: http://efk-elasticsearch-client.default.svc.cluster.local:9200
+    SERVER_PORT: 5601
+    LOGGING_VERBOSE: "true"
+    SERVER_DEFAULTROUTE: "/app/kibana"
+  service:
+    externalPort: 5601
+    internalPort: 5601
