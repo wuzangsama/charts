@@ -1,7 +1,7 @@
 dependencies:
 - name: elasticsearch
   version: "1.9.2"
-  repository: http://127.0.0.1:8879/charts
+  repository: https://wuzangsama.github.io/helm-charts
 - name: fluent-bit
   version: "0.12.0"
   repository: https://kubernetes-charts.storage.googleapis.com/
