@@ -6,7 +6,7 @@ image:
   tag: 4.0.11-stretch
   pullPolicy: IfNotPresent
 ## replicas number for each component
-replicas: 3
+replicas: 2
 
 ## Redis specific configuration options
 redis:
