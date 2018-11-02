@@ -15,6 +15,7 @@ redis:
   config:
     ## Additional redis conf options can be added below
     ## For all available options see http://download.redis.io/redis-stable/redis.conf
+    cluster-enabled: "yes"
     min-slaves-to-write: 1
     min-slaves-max-lag: 5   # Value in seconds
     maxmemory: "0"       # Max memory to use for each redis instance. Default is unlimited.
